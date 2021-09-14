@@ -1,20 +1,12 @@
 import React from 'react';
 
-import DrumPad from './conponents/drumPad';
+import Board from './conponents/board';
 
 function App() {
   return (
     <div id="drum-machine">
       <div id="display" />
-      <DrumPad keyboard="Q" />
-      <DrumPad keyboard="W" />
-      <DrumPad keyboard="E" />
-      <DrumPad keyboard="A" />
-      <DrumPad keyboard="S" />
-      <DrumPad keyboard="D" />
-      <DrumPad keyboard="Y" />
-      <DrumPad keyboard="X" />
-      <DrumPad keyboard="C" />
+      <Board />
     </div>
   );
 }
