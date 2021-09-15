@@ -5,15 +5,20 @@
 
 import React from 'react';
 
-const DrumPad = ({ keyboard, url, id }) => {
+const DrumPad = ({
+  keyboard, url, id, updateDisplay,
+}) => {
   const playSFX = () => {
+    updateDisplay(id);
     const audio = document.getElementById(keyboard);
     audio.currentTime = 0;
     audio.play();
   };
 
   const handleKey = (event) => {
-    if (event.code === `Key${keyboard}`) playSFX(keyboard);
+    if (event.code === `Key${keyboard}`) {
+      playSFX(keyboard);
+    }
   };
 
   React.useEffect(() => {
@@ -29,7 +34,9 @@ const DrumPad = ({ keyboard, url, id }) => {
       tabIndex="-1"
       id={id}
       className="drum-pad"
-      onClick={() => playSFX(keyboard)}
+      onClick={() => {
+        playSFX(keyboard);
+      }}
     >
       <audio
         className="clip"
